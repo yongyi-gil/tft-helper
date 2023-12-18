@@ -77,7 +77,6 @@ const ChampionList = () => {
 
   const championData: ChampionType[] = champData ? Object.values(champData) : [];
   
-  console.log('champions: ', champData);
   return (
     <ChampListDiv>
       <div className="search-input">

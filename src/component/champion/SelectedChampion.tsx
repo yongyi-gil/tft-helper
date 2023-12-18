@@ -172,7 +172,6 @@ export default function SelectedChampion() {
     });
 
     const synergyArray = Object.entries(countMap).map(([key, value]) => ({ [key]: value }));
-    console.log('sa', synergyArray);
 
     const sortedArray = synergyArray.sort((obj1, obj2) => {
       const value1 = Object.values(obj1)[0];
