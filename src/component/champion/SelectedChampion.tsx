@@ -63,7 +63,7 @@ const SelectedDiv = styled.div`
     }
 
     .empty-champion {
-      margin: 8px;
+      margin: 4px;
       height: 48px;
       width: 48px;
       background-color: #eaeaea;
