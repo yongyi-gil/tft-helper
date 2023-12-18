@@ -1,6 +1,8 @@
 "use client"
 import { RecoilRoot } from 'recoil';
 
+import StyledComponentsRegistry from '../lib/registry';
+
 import './globals.css';
 
 export default function RootLayout({
@@ -18,7 +20,9 @@ export default function RootLayout({
           <div className="banner">
             <div className="banner-overlay" />
           </div>
-          {children}
+          <StyledComponentsRegistry>
+            {children}
+          </StyledComponentsRegistry>
         </RecoilRoot>
       </body>
     </html>

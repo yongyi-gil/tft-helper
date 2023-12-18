@@ -1,3 +1,5 @@
+import { ClassType } from "react";
+
 export type PropertiesType =
   "컨트리" |
   "펜타킬" |
@@ -38,5 +40,5 @@ export type ChampionType = {
   id: string;
   name: string;
   tier: number;
-  properties: SynergyType;
+  properties: PropertiesType | ClassType;
 }
