@@ -5,6 +5,9 @@ import StyledComponentsRegistry from '../lib/registry';
 
 import './globals.css';
 
+import Header from '@/component/header/Header';
+import Toolbar from '@/component/toolbar/Toobar';
+
 export default function RootLayout({
   children,
 }: {
@@ -14,13 +17,12 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <RecoilRoot>
-          <div className="header">
-            <h1>TFT Season.10 Helper</h1>
-          </div>
-          <div className="banner">
-            <div className="banner-overlay" />
-          </div>
           <StyledComponentsRegistry>
+            <Header />
+            <div className="banner">
+              <div className="banner-overlay" />
+            </div>
+            <Toolbar />
             {children}
           </StyledComponentsRegistry>
         </RecoilRoot>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="home">
+    <div className="root">
       <React.Suspense fallback={<div />}>
         <ChampionList />
         <SelectedChampion />

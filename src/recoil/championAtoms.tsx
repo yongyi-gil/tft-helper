@@ -7,6 +7,7 @@ const fetchChampData = async () => {
     const res = await fetch(url, { cache: 'force-cache' });
   
     const data = await res.json();
+    console.log(data);
     return data;
   } catch (error) {
     throw error;    

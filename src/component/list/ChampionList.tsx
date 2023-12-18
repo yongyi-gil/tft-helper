@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import styled from 'styled-components';
+import { useRouter } from 'next/navigation';
 
 import {
   useRecoilState,
@@ -55,8 +56,6 @@ const ChampListDiv = styled.div`
     display: flex;
     flex-wrap: wrap;
     position: relative;
-
-    
   }
 `;
 
@@ -64,9 +63,23 @@ const ChampionList = () => {
   const [ selectedChampion, setSelectedChampion ] = useRecoilState(selectedChampState);
   const [ keyword, setKeyword ] = useRecoilState(searchKeywordState);
 
+  const router = useRouter();
+
   const champData = useRecoilValue(champDataSelector);
 
-  const championDataArray: ChampionType[] = champData ? Object.values(champData) : [];
+  const handleAddChampion = (champ: ChampionType) => {
+    const isDuplicate = selectedChampion.some((champion) => champion.id === champ.id);
+    if (
+      isDuplicate || 
+      selectedChampion.length > 9
+    ) {
+      return;
+    }
+
+    const selected = [...selectedChampion];
+    selected.push(champ);
+    setSelectedChampion(selected);
+  }
 
   return (
     <ChampListDiv>
@@ -82,22 +95,19 @@ const ChampionList = () => {
       </div>
       <div className="list">
         {
-          championDataArray.map((champ) => champ.name.includes(keyword) && (
+          champData.map((champ) => champ.name.includes(keyword) && (
             <ChampionImage
               key={champ.id}
               champ={champ}
               handleClick={() => {
-                const isDuplicate = selectedChampion.some((champion) => champion.id === champ.id);
-                if (
-                  isDuplicate || 
-                  selectedChampion.length > 9
-                ) {
-                  return;
-                }
+                const { pathname } = window.location;
+                const [ firstSegment ] = pathname.split('/').filter(Boolean);
 
-                const selected = [...selectedChampion];
-                selected.push(champ);
-                setSelectedChampion(selected);
+                if (pathname === '/') {
+                  handleAddChampion(champ);
+                } else if (firstSegment === 'champion') {
+                  router.push(`/champion/${champ.id}`);
+                }
               }}
             />
           ))

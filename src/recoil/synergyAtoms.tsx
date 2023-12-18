@@ -5,7 +5,7 @@ const fetchSynergyData = async () => {
   try {
     const url = `${process.env.NEXT_PUBLIC_API_URL}/synergy`;
     const res = await fetch(url, { cache: 'force-cache' });
-  
+
     const data = await res.json();
     return data;
   } catch (error) {

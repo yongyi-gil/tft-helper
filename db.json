@@ -1,366 +1,366 @@
 {
-  "champions": {
-    "Ahri": {
+  "champions": [
+    {
       "id": "Ahri",
       "name": "아리",
       "tier": 4,
       "properties": ["KDA", "주문술사"]
     },
-    "Akali_KDA": {
+    {
       "id": "Akali_KDA",
       "name": "아칼리",
       "tier": 4,
       "properties": ["KDA", "처형자", "빅히트"]
     },
-    "Amumu": {
+    {
       "id": "Amumu",
       "name": "아무무",
       "tier": 3,
       "properties": ["수호자", "이모코어"]
     },
-    "Annie": {
+    {
       "id": "Annie",
       "name": "애니",
       "tier": 1,
       "properties": ["이모코어", "주문술사"]
     },
-    "Aphelios": {
+    {
       "id": "Aphelios",
       "name": "아펠리오스",
       "tier": 2,
       "properties": ["Heartsteel", "속사포"]
     },
-    "Bard": {
+    {
       "id": "Bard",
       "name": "바드",
       "tier": 2,
       "properties": ["재즈", "현혹술사"]
     },
-    "Blitzcrank": {
+    {
       "id": "Blitzcrank",
       "name": "블리츠크랭크",
       "tier": 4,
       "properties": ["디스코", "감시자"]
     },
-    "Caitlyn": {
+    {
       "id": "Caitlyn",
       "name": "케이틀린",
       "tier": 4,
       "properties": ["속사포", "8비트"]
     },
-    "Corki": {
+    {
       "id": "Corki",
       "name": "코르키",
       "tier": 1,
       "properties": ["8비트", "거물"]
     },
-    "Ekko": {
+    {
       "id": "Ekko",
       "name": "에코",
       "tier": 3,
       "properties": ["True Damage", "주문술사", "감시자"]
     },
-    "Evelynn": {
+    {
       "id": "Evelynn",
       "name": "이블린",
       "tier": 1,
       "properties": ["KDA", "스테이지 다이버"]
     },
-    "Ezreal": {
+    {
       "id": "Ezreal",
       "name": "이즈리얼",
       "tier": 4,
       "properties": ["Heartsteel", "거물"]
     },
-    "Gnar": {
+    {
       "id": "Gnar",
       "name": "나르",
       "tier": 2,
       "properties": ["펜타킬", "열혈 팬"]
     },
-    "Gragas": {
+    {
       "id": "Gragas",
       "name": "그라가스",
       "tier": 2,
       "properties": ["디스코", "주문술사", "난동꾼"]
     },
-    "Illaoi": {
+    {
       "id": "Illaoi",
       "name": "일라오이",
       "tier": 5,
       "properties": ["일류 비트", "난동꾼"]
     },
-    "Jax": {
+    {
       "id": "Jax",
       "name": "잭스",
       "tier": 2,
       "properties": ["EDM", "춤꾼"]
     },
-    "Jhin": {
+    {
       "id": "Jhin",
       "name": "진",
       "tier": 5,
       "properties": ["마에스트로", "거물"]
     },
-    "Jinx": {
+    {
       "id": "Jinx",
       "name": "징크스",
       "tier": 1,
       "properties": ["속사포", "펑크"]
     },
-    "Karthus": {
+    {
       "id": "Karthus",
       "name": "카서스",
       "tier": 4,
       "properties": ["펜타킬", "처형자"]
     },
-    "Katarina": {
+    {
       "id": "Katarina",
       "name": "카타리나",
       "tier": 2,
       "properties": ["컨트리", "스테이지 다이버"]
     },
-    "Kayle": {
+    {
       "id": "Kayle",
       "name": "케일",
       "tier": 2,
       "properties": ["펜타킬", "이단아"]
     },
-    "Kayn": {
+    {
       "id": "Kayn",
       "name": "케인",
       "tier": 5,
       "properties": [ "와일드카드", "Heartsteel", "이단아"]
     },
-    "Kennen": {
+    {
       "id": "Kennen",
       "name": "케넨",
       "tier": 1,
       "properties": ["수호자", "열혈 팬", "True Damage"]
     },
-    "Lillia": {
+    {
       "id": "Lillia",
       "name": "릴리아",
       "tier": 1,
       "properties": ["KDA", "열혈 팬", "감시자"]
     },
-    "Lucian": {
+    {
       "id": "Lucian",
       "name": "루시안",
       "tier": 5,
       "properties": ["속사포", "재즈"]
     },
-    "Lulu": {
+    {
       "id": "Lulu",
       "name": "룰루",
       "tier": 3,
       "properties": ["하이퍼팝", "주문술사"]
     },
-    "Lux": {
+    {
       "id": "Lux",
       "name": "럭스",
       "tier": 3,
       "properties": ["현혹술사", "EDM"]
     },
-    "Mordekaiser": {
+    {
       "id": "Mordekaiser",
       "name": "모데카이저",
       "tier": 3,
       "properties": ["펜타킬", "감시자"]
     },
-    "Nami": {
+    {
       "id": "Nami",
       "name": "나미",
       "tier": 1,
       "properties": ["현혹술사", "디스코"]
     },
-    "Neeko": {
+    {
       "id": "Neeko",
       "name": "니코",
       "tier": 3,
       "properties": ["수호자", "KDA", "열혈 팬"]
     },
-    "Pantheon": {
+    {
       "id": "Pantheon",
       "name": "판테온",
       "tier": 2,
       "properties": ["펑크", "수호자"]
     },
-    "Poppy": {
+    {
       "id": "Poppy",
       "name": "뽀삐",
       "tier": 4,
       "properties": ["이모코어", "춤꾼"]
     },
-    "Qiyana": {
+    {
       "id": "Qiyana",
       "name": "키아나",
       "tier": 5,
       "properties": ["True Damage", "스테이지 다이버"]
     },
-    "Riven": {
+    {
       "id": "Riven",
       "name": "리븐",
       "tier": 3,
       "properties": ["8비트", "이단아"]
     },
-    "Samira": {
+    {
       "id": "Samira",
       "name": "사미라",
       "tier": 3,
       "properties": ["컨트리", "처형자"]
     },
-    "Senna": {
+    {
       "id": "Senna",
       "name": "세나",
       "tier": 2,
       "properties": ["속사포", "True Damage"]
     },
-    "Seraphine": {
+    {
       "id": "Seraphine",
       "name": "세라핀",
       "tier": 2,
       "properties": ["KDA", "주문술사"]
     },
-    "Sett": {
+    {
       "id": "Sett",
       "name": "세트",
       "tier": 3,
       "properties": ["Heartsteel", "난동꾼", "춤꾼"]
     },
-    "Sona": {
+    {
       "id": "Sona",
       "name": "소나",
       "tier": 5,
       "properties": ["믹스마스터", "주문술사"]
     },
-    "Taric": {
+    {
       "id": "Taric",
       "name": "타릭",
       "tier": 1,
       "properties": ["디스코", "수호자"]
     },
-    "Thresh": {
+    {
       "id": "Thresh",
       "name": "쓰레쉬",
       "tier": 4,
       "properties": ["컨트리", "수호자"]
     },
-    "Twitch": {
+    {
       "id": "Twitch",
       "name": "트위치",
       "tier": 2,
       "properties": ["펑크", "처형자"]
     },
-    "Urgot": {
+    {
       "id": "Urgot",
       "name": "우르곳",
       "tier": 3,
       "properties": ["컨트리", "춤꾼"]
     },
-    "Vex": {
+    {
       "id": "Vex",
       "name": "벡스",
       "tier": 3,
       "properties": ["이모코어", "처형자"]
     },
-    "Vi": {
+    {
       "id": "Vi",
       "name": "바이",
       "tier": 1,
       "properties": ["펑크", "춤꾼"]
     },
-    "Viego": {
+    {
       "id": "Viego",
       "name": "비에고",
       "tier": 4,
       "properties": ["펜타킬", "이단아"]
     },
-    "Yasuo": {
+    {
       "id": "Yasuo",
       "name": "야스오",
       "tier": 1,
       "properties": ["True Damage", "이단아"]
     },
-    "Yone": {
+    {
       "id": "Yone",
       "name": "요네",
       "tier": 3,
       "properties": ["Heartsteel", "이단아", "스테이지 다이버"]
     },
-    "Yorick": {
+    {
       "id": "Yorick",
       "name": "요릭",
       "tier": 5,
       "properties": ["펜타킬", "수호자", "춤꾼"]
     },
-    "Zac": {
+    {
       "id": "Zac",
       "name": "자크",
       "tier": 4,
       "properties": ["EDM", "난동꾼"]
     },
-    "Zed": {
+    {
       "id": "Zed",
       "name": "제드",
       "tier": 4,
       "properties": ["EDM", "스테이지 다이버"]
     },
-    "Ziggs": {
+    {
       "id": "Ziggs",
       "name": "직스",
       "tier": 5,
       "properties": ["하이퍼팝", "현혹술사"]
     },
-    "MissFortune": {
+    {
       "id": "MissFortune",
       "name": "미스포츈",
       "tier": 3,
       "properties": ["재즈", "거물"]
     },
-    "Olaf": {
+    {
       "id": "Olaf",
       "name": "올라프",
       "tier": 1,
       "properties": ["펜타킬", "난동꾼"]
     },
-    "TahmKench": {
+    {
       "id": "TahmKench",
       "name": "탐켄치",
       "tier": 1,
       "properties": ["컨트리", "난동꾼"]
     },
-    "TwistedFate": {
+    {
       "id": "TwistedFate",
       "name": "트위스티드페이트",
       "tier": 4,
       "properties": ["디스코", "현혹술사"]
     },
-    "KSante": {
+    {
       "id": "KSante",
       "name": "크산테",
       "tier": 1,
       "properties": ["Heartsteel", "감시자"]
     },
-    "Kaisa": {
+    {
       "id": "Kaisa",
       "name": "카이사",
       "tier": 2,
       "properties": ["KDA", "거물"]
     },
-    "Akali_TrueDamage": {
+    {
       "id": "Akali_TrueDamage",
       "name": "아칼리",
       "tier": 4,
       "properties": ["True Damage", "처형자", "빅히트"]
     },
-    "Garen": {
+    {
       "id": "Garen",
       "name": "가렌",
       "tier": 2,
       "properties": ["8비트", "감시자"]
     }
-  },
+  ],
   "synergy": {
     "이모코어": {
       "desc": "이모코어 챔피언의 스킬 마나 소모량이 감소하고 아군 챔피언이 죽을 때마다 마나를 얻습니다.",

@@ -55,12 +55,12 @@ body {
   background-color: #ffffff80;
 }
 
-.home {
+.root, .path-champion {
   display: flex;
 }
 
 @media(max-width: 1000px) {
-  .home {
+  .root, .path-champion {
     display: contents;
   }
 
