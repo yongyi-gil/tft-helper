@@ -281,7 +281,7 @@ export default function SelectedChampion() {
                   {
                     abilities &&
                     Object.entries(abilities).map(([level, description]) => {
-                      const applied = value[0] === Number(level);
+                      const applied = value[0] >= Number(level);
                       return (
                         <div
                           className={`synergy-abilites ${applied ? 'applied' : ''}`}
