@@ -1,7 +1,6 @@
 "use client"
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
 
 import {
   useRecoilState,
@@ -15,6 +14,7 @@ import {
 } from '../../recoil/championAtoms';
 
 import { ChampionType } from '@/app/types/champion';
+import ChampionImage from '../champion/ChampionImage';
 
 const ChampListDiv = styled.div`
   width: 230px;
@@ -56,29 +56,7 @@ const ChampListDiv = styled.div`
     flex-wrap: wrap;
     position: relative;
 
-    .champ-info {
-      position: relative;
-      width: 48px;
-      height: 48px;
-      margin: 4px;
-      border: 1px solid #eee;
-      cursor: pointer;
-
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
-
-      &:hover {
-        border: 1px solid #da2f2f;
-      }
-
-      .champ-name {
-        position: absolute;
-        font-size: 10px;
-        bottom: 0;
-        left: 2px;
-      }
-    }
+    
   }
 `;
 
@@ -105,10 +83,10 @@ const ChampionList = () => {
       <div className="list">
         {
           championDataArray.map((champ) => champ.name.includes(keyword) && (
-            <div
-              className="champ-info"
+            <ChampionImage
               key={champ.id}
-              onClick={() => {
+              champ={champ}
+              handleClick={() => {
                 const isDuplicate = selectedChampion.some((champion) => champion.id === champ.id);
                 if (
                   isDuplicate || 
@@ -121,17 +99,7 @@ const ChampionList = () => {
                 selected.push(champ);
                 setSelectedChampion(selected);
               }}
-            >
-              <Image
-                src={`/img/champions/${champ.id}.png`}
-                alt={`${champ.id}`}
-                width={48}
-                height={48}
-                priority
-                title={champ.name}
-              />
-              <span className="champ-name">{champ.name}</span>
-            </div>
+            />
           ))
         }
       </div>

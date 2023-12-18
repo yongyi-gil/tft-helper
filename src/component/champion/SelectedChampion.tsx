@@ -16,6 +16,7 @@ import {
 } from '../../recoil/synergyAtoms';
 
 import { SynergyType, ChampionType } from '@/app/types/champion';
+import ChampionImage from './ChampionImage';
 
 const SelectedDiv = styled.div`
   flex: 1;
@@ -200,24 +201,13 @@ export default function SelectedChampion() {
       <div className="champions">
         {
           selectedChampion.map((champ: ChampionType) => (
-            <div
-              className="champions-info"
-              key={`info-${champ.id}`}
-            >
-              <Image
-                src={`/img/champions/${champ.id}.png`}
-                alt={`${champ.id}`}
-                width={48}
-                height={48}
-                priority
-                title={champ.name}
-                onClick={() => {
-                  handleDeleteChampion(champ.id);
-                }}
-              />
-              <span className="champ-name">{champ.name}</span>
-            </div>
-            
+            <ChampionImage
+              key={`selected-${champ.id}`}
+              champ={champ}
+              handleClick={() => {
+                handleDeleteChampion(champ.id);
+              }}
+            />
           ))
         }
         {
