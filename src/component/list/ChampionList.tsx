@@ -75,8 +75,8 @@ const ChampionList = () => {
 
   const champData = useRecoilValue(champDataSelector);
 
-  const championData: ChampionType[] = champData ? Object.values(champData) : [];
-  
+  const championDataArray: ChampionType[] = champData ? Object.values(champData) : [];
+
   return (
     <ChampListDiv>
       <div className="search-input">
@@ -91,7 +91,7 @@ const ChampionList = () => {
       </div>
       <div className="list">
         {
-          championData.map((champ) => champ.name.includes(keyword) && (
+          championDataArray.map((champ) => champ.name.includes(keyword) && (
             <div
               className="champ-img"
               key={champ.id}
