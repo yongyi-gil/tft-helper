@@ -13,7 +13,7 @@ import {
   champDataSelector,
 } from '../../recoil/championAtoms';
 
-import { ChampionType } from '@/app/types/champion';
+import { ChampionType } from '@/types/champion';
 import ChampionImage from '../champion/ChampionImage';
 
 const ChampListDiv = styled.div`

@@ -15,7 +15,7 @@ import {
   synergyState,
 } from '../../recoil/synergyAtoms';
 
-import { SynergyType, ChampionType } from '@/app/types/champion';
+import { SynergyType, ChampionType } from '@/types/champion';
 import ChampionImage from './ChampionImage';
 
 const SelectedDiv = styled.div`

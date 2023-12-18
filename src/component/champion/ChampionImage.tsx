@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import styled, { css } from 'styled-components';
 
-import { ChampionType } from '@/app/types/champion';
+import { ChampionType } from '@/types/champion';
 
 const ChampionImageDiv = styled.div<{ tier: number }>`
   position: relative;
