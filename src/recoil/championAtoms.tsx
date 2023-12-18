@@ -4,7 +4,7 @@ import { atom, selector } from 'recoil';
 const fetchChampData = async () => {
   try {
     const url = `${process.env.NEXT_PUBLIC_API_URL}/champions`;
-    const res = await fetch(url);
+    const res = await fetch(url, { cache: 'force-cache' });
   
     const data = await res.json();
     return data;
