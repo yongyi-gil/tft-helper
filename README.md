@@ -9,7 +9,7 @@
 ## Getting started
 ```bash
 yarn instal
-yarn start
+yarn dev
 ```
 
 ```
