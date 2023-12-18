@@ -1,6 +1,10 @@
 # TFT Helper
 ## 내가 쓰려고 만든 Team FightTactics Helper,
-### 2023.12.17 시작
+
+### 23.12.16 tft 한판지고 열받아서 샤워하다가 만들어야겠다고 생각이 듬..
+### 2023.12.17 프로젝트 시작
+### 2023.12.18 선택된 챔피언에 따른 조합 시너지 효과 화면 개발
+> 편하게 tailwindcss 쓰려고 추가했는데 왜 styled-component가 난 더 편할까...
 
 ## Getting started
 ```bash
