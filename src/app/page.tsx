@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Metadata } from 'next';
 
 import ChampionList from '@/component/list/ChampionList';
@@ -9,11 +10,11 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div
-      className="home"
-    >
-      <ChampionList />
-      <SelectedChampion />
+    <div className="home">
+      <React.Suspense fallback={<div />}>
+        <ChampionList />
+        <SelectedChampion />
+      </React.Suspense>
     </div>
   )
 }
