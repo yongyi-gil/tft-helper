@@ -54,16 +54,29 @@ const ChampListDiv = styled.div`
   .list {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 
-    .champ-img {
+    .champ-info {
+      position: relative;
       width: 48px;
       height: 48px;
       margin: 4px;
       border: 1px solid #eee;
       cursor: pointer;
 
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+
       &:hover {
         border: 1px solid #da2f2f;
+      }
+
+      .champ-name {
+        position: absolute;
+        font-size: 10px;
+        bottom: 0;
+        left: 2px;
       }
     }
   }
@@ -93,7 +106,7 @@ const ChampionList = () => {
         {
           championDataArray.map((champ) => champ.name.includes(keyword) && (
             <div
-              className="champ-img"
+              className="champ-info"
               key={champ.id}
               onClick={() => {
                 const isDuplicate = selectedChampion.some((champion) => champion.id === champ.id);
@@ -115,7 +128,9 @@ const ChampionList = () => {
                 width={48}
                 height={48}
                 priority
+                title={champ.name}
               />
+              <span className="champ-name">{champ.name}</span>
             </div>
           ))
         }

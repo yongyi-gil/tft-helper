@@ -47,9 +47,18 @@ const SelectedDiv = styled.div`
     overflow: hidden;
     flex-wrap: wrap;
     
-    img {
-      margin: 8px;
-      cursor: pointer;
+    .champions-info {
+      position: relative;
+      img {
+        margin: 8px;
+        cursor: pointer;
+      }
+  
+      .champ-name {
+        position: absolute;
+        font-size: 10px;
+        bottom: 0;
+      }
     }
 
     .empty-champion {
@@ -191,17 +200,24 @@ export default function SelectedChampion() {
       <div className="champions">
         {
           selectedChampion.map((champ: ChampionType) => (
-            <Image
-              key={champ.id}
-              src={`/img/champions/${champ.id}.png`}
-              alt={`${champ.id}`}
-              width={48}
-              height={48}
-              priority
-              onClick={() => {
-                handleDeleteChampion(champ.id);
-              }}
-            />
+            <div
+              className="champions-info"
+              key={`info-${champ.id}`}
+            >
+              <Image
+                src={`/img/champions/${champ.id}.png`}
+                alt={`${champ.id}`}
+                width={48}
+                height={48}
+                priority
+                title={champ.name}
+                onClick={() => {
+                  handleDeleteChampion(champ.id);
+                }}
+              />
+              <span className="champ-name">{champ.name}</span>
+            </div>
+            
           ))
         }
         {
