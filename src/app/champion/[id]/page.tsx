@@ -14,13 +14,13 @@ const InfoDiv = styled.div<{tier: number}>`
   flex: 1;
   overflow: hidden;
   width: calc(100% - 40px);
-  height: 100%;
+  height: 500px;
   margin: 20px;
+  background-color: #2b2b2b;
+  border-radius: 10px;
 
   .info-wrap {
     display: flex;
-    background-color: #2b2b2b;
-    border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
   
@@ -71,8 +71,6 @@ const InfoDiv = styled.div<{tier: number}>`
   }
 
   .same-tier-champion, .same-synergy-champion {
-    background-color: #2b2b2b;
-    border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
 
@@ -198,40 +196,45 @@ export default function page() {
           </div>
         </div>
       </div>
-      <div className="same-tier-champion">
-        <h2>같은 {champion?.tier}티어 챔피언</h2>
-        <div className="list">
-          {
-            sameTierChampion &&
-            sameTierChampion.map((champ: ChampionType) => (
-              <ChampionImage
-                key={`same-tier-${champ.id}`}
-                champ={champ}
-                handleClick={() => {
-                  router.push(`/champion/${champ.id}`);
-                }}
-              />
-            ))
+      {
+        sameTierChampion &&
+          <div className="same-tier-champion">
+            <h2>같은 {champion?.tier}티어 챔피언</h2>
+            <div className="list">
+                {
+                  sameTierChampion.map((champ: ChampionType) => (
+                    <ChampionImage
+                      key={`same-tier-${champ.id}`}
+                      champ={champ}
+                      handleClick={() => {
+                        router.push(`/champion/${champ.id}`);
+                      }}
+                    />
+                  ))
+                }
+              </div>
+            </div>
           }
-        </div>
-      </div>
-      <div className="same-synergy-champion">
-        <h2>동일 시너지 챔피언</h2>
-        <div className="list">
-          {
-            sameSynergyChampion &&
-            sameSynergyChampion.map((champ: ChampionType) => (
-              <ChampionImage
-                key={`same-synergy-${champ.id}`}
-                champ={champ}
-                handleClick={() => {
-                  router.push(`/champion/${champ.id}`);
-                }}
-              />
-            ))
-          }
-        </div>
-      </div>
+      {
+        sameSynergyChampion && (
+          <div className="same-synergy-champion">
+            <h2>동일 시너지 챔피언</h2>
+            <div className="list">
+              {
+                sameSynergyChampion.map((champ: ChampionType) => (
+                  <ChampionImage
+                    key={`same-synergy-${champ.id}`}
+                    champ={champ}
+                    handleClick={() => {
+                      router.push(`/champion/${champ.id}`);
+                    }}
+                  />
+                ))
+              }
+            </div>
+          </div>
+        )
+      }
     </InfoDiv>
   )
 }
