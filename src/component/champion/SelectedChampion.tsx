@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useMemo } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 
@@ -193,7 +193,7 @@ export default function SelectedChampion() {
     return sortedArray;
   }
 
-  const appliedSynergy = getSynergyCount();
+  const appliedSynergy = useMemo(() => getSynergyCount(), [selectedChampion]);
 
   return (
     <SelectedDiv>
