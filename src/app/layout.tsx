@@ -1,4 +1,5 @@
-"use client"
+"use client";
+import React from 'react';
 import { RecoilRoot } from 'recoil';
 
 import StyledComponentsRegistry from '../lib/registry';
@@ -18,12 +19,14 @@ export default function RootLayout({
       <body>
         <RecoilRoot>
           <StyledComponentsRegistry>
-            <Header />
-            <div className="banner">
-              <div className="banner-overlay" />
-            </div>
-            <Toolbar />
-            {children}
+            <React.Suspense fallback={<div />}>
+              <Header />
+              <div className="banner">
+                <div className="banner-overlay" />
+              </div>
+              <Toolbar />
+              {children}
+            </React.Suspense>
           </StyledComponentsRegistry>
         </RecoilRoot>
       </body>
