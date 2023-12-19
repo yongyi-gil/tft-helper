@@ -14,7 +14,8 @@ const InfoDiv = styled.div<{tier: number}>`
   flex: 1;
   overflow: hidden;
   width: calc(100% - 40px);
-  height: 500px;
+  height: 100%;
+  min-height: 500px;
   margin: 20px;
   background-color: #2b2b2b;
   border-radius: 10px;
@@ -50,11 +51,13 @@ const InfoDiv = styled.div<{tier: number}>`
     .champion-info-properties {
       display: flex;
       padding-left: 20px;
+      flex-wrap: wrap;
   
       .champion-info-synergy {
         display: flex;
         align-items: center;
         padding: 2px 8px;
+        margin: 2px;
         border: 1px solid #fff;
         background-color: #fff;
         border-radius: 8px;
