@@ -11,10 +11,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="root">
-      <React.Suspense fallback={<div />}>
-        <ChampionList />
-        <SelectedChampion />
-      </React.Suspense>
+      <ChampionList />
+      <SelectedChampion />
     </div>
   )
 }
