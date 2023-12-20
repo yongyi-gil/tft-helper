@@ -29,7 +29,6 @@ export default function SummonerInfo(props: any) {
   const { summoner } = props;
   const { summonerName, tier, rank, leaguePoints, wins, losses } = summoner;
 
-  console.log(summoner);
   return (
     <InfoDiv>
       <Image

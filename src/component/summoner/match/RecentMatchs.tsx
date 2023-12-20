@@ -50,10 +50,8 @@ export default function RecentMatchs(props: any) {
         const match = await getMatchData(id);
         temp.push(match);
 
-        console.log(idx, matchIds.length);
         if (matchIds.length === idx + 1) {
           setMatchs(temp);
-          console.log('end', matchs);
         }
       });
     }
@@ -78,7 +76,6 @@ export default function RecentMatchs(props: any) {
     return myMatchData;
   }
 
-  console.log(matchs);
   return (
     <MatchsDiv>
       <h2>최근 게임</h2>
@@ -90,7 +87,10 @@ export default function RecentMatchs(props: any) {
           const seconds = Math.floor(palyTime % 60);
 
           return (
-            <div className="recent-matchs">
+            <div
+              key={`match-${idx}`}
+              className="recent-matchs"
+            >
               <span className="match-placement">
                 {match.placement}st
               </span>

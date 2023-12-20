@@ -50,7 +50,6 @@ export default function Summoner() {
       const res = await fetch(url, options);
       const data = await res.json();
 
-      console.log('getLeague()', data[0]);
       setSummoner(data[0]);
     } catch (error) {
       throw error;
