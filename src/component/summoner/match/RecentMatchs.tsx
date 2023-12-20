@@ -56,8 +56,9 @@ export default function RecentMatchs(props: any) {
         temp.push(match);
 
         if (matchIds.length === idx + 1) {
+          console.log(temp);
           const sortedTemp = temp.sort((match1, match2) => {
-            return match2 - match1;
+            return match2.dateTime - match1.dateTime;
           })
           setMatchs(sortedTemp);
         }
@@ -117,6 +118,9 @@ export default function RecentMatchs(props: any) {
                     const champ = unit;
                     champ.id = unit.character_id.substring(6);
                     champ.name = unit.character_id.substring(6);
+                    champ.tier =
+                      unit.rarity > 5 ? unit.rarity - 1 :
+                      unit.rarity === 0 ? unit.rarity + 1 : unit.rarity;
 
                     return (
                       <ChampionImage
