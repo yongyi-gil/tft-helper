@@ -120,7 +120,7 @@ export default function RecentMatchs(props: any) {
                     champ.name = unit.character_id.substring(6);
                     champ.tier =
                       unit.rarity > 5 ? unit.rarity - 1 :
-                      unit.rarity === 0 ? unit.rarity + 1 : unit.rarity;
+                      unit.rarity < 4 ? unit.rarity + 1 : unit.rarity;
 
                     return (
                       <ChampionImage
