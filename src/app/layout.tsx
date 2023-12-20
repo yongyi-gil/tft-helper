@@ -7,7 +7,7 @@ import StyledComponentsRegistry from '../lib/registry';
 import './globals.css';
 
 import Header from '@/component/header/Header';
-import Toolbar from '@/component/toolbar/Toobar';
+import Toolbar from '@/component/toolbar/Toolbar';
 
 export default function RootLayout({
   children,
