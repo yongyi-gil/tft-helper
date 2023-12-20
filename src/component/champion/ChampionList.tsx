@@ -15,7 +15,7 @@ import {
 } from '../../recoil/championAtoms';
 
 import { ChampionType } from '@/types/champion';
-import ChampionImage from '../champion/ChampionImage';
+import ChampionImage from './ChampionImage';
 
 const ChampListDiv = styled.div`
   width: 230px;

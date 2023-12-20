@@ -27,7 +27,7 @@ export default function Toolbar() {
         href="/"
         className="link-button"
       >
-        전적
+        소환사 검색
       </Link>
       <Link
         href="/builder"

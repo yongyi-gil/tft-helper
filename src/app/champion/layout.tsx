@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ChampionList from '@/component/list/ChampionList';
+import ChampionList from '@/component/champion/ChampionList';
 
 export default function page({
   children,

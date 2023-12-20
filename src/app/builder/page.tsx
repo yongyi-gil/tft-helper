@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 
-import ChampionList from '@/component/list/ChampionList';
+import ChampionList from '@/component/champion/ChampionList';
 import SelectedChampion from '@/component/champion/SelectedChampion';
 
 export const metadata: Metadata = {
