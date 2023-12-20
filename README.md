@@ -35,7 +35,7 @@ npx json-server --port 9999 -watch db.json
 ```
 ---
 ## Screenshot
-<img width="1000" alt="스크린샷 2023-12-20 오후 6 36 59" src="https://github.com/yongyi-gil/tft-helper/assets/46886774/41fae806-c0d3-4d85-8ff5-8f1f4e2cf378">
+<img width="1000" alt="스크린샷 2023-12-20 오후 6 36 59" src="https://github.com/yongyi-gil/tft-helper/assets/46886774/c098a8d7-3483-41f5-b0d2-7d91e9e92ae8">
 <img width="1255" alt="스크린샷 2023-12-20 오후 1 38 53" src="https://github.com/yongyi-gil/tft-helper/assets/46886774/97db1426-8181-4aa7-8200-301abc403368">
 <img width="359" alt="스크린샷 2023-12-20 오후 1 39 06" src="https://github.com/yongyi-gil/tft-helper/assets/46886774/8e676a89-695d-4621-bc4a-9d6fcb1a7f0f">
 <img width="483" alt="스크린샷 2023-12-20 오후 2 08 56" src="https://github.com/yongyi-gil/tft-helper/assets/46886774/b68376a9-43a5-4722-93c3-83a04c5b339f">
