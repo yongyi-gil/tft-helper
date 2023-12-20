@@ -8,6 +8,10 @@ const nextConfig = {
     return [
       {
         source: '/:path*',
+        destination: '/:path*',
+      },
+      {
+        source: '/:path*',
         destination: 'https://kr.api.riotgames.com/:path*',
       },
     ]
