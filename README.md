@@ -29,7 +29,6 @@ yarn dev
 
 4. json-server 실행
 ```
-// json-server 실행 필요.
 npx json-server --port 9999 -watch db.json
 ```
 ---
