@@ -1,18 +1,66 @@
-import React from 'react';
-import type { Metadata } from 'next';
+"use client";
+import React, { useState } from 'react';
 
-import ChampionList from '@/component/list/ChampionList';
-import SelectedChampion from '@/component/champion/SelectedChampion';
+import SearchPlayer from '../component/search/SearchPlayer';
+import SummonerInfo from '@/component/search/SummonerInfo';
 
-export const metadata: Metadata = {
-  title: 'TeamFight Tactics Helper',
-}
+export default function SummonerPage() {
+  const [ summoner , setSummoner ] = useState(null);
 
-export default function Home() {
+  const getSummonerInfo = async (name: string) => {
+    try {
+      const url = `/tft/summoner/v1/summoners/by-name/${name}`;
+      const options = {
+        method: 'GET',
+        headers: {
+          "X-Riot-Token": `${process.env.NEXT_PUBLIC_TFT_API_KEY}`,
+        }
+      }
+
+      const res = await fetch(url, options);
+      const data = await res.json();
+      console.log(data);
+
+      getLeague(data.id);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  const getLeague = async (id: string) => {
+    try {
+      const url = `/tft/league/v1/entries/by-summoner/${id}`;
+      const options = {
+        method: 'GET',
+        headers: {
+          "X-Riot-Token": `${process.env.NEXT_PUBLIC_TFT_API_KEY}`,
+        }
+      }
+
+      const res = await fetch(url, options);
+      const data = await res.json();
+      console.log(data);
+
+      setSummoner(data[0]);
+    } catch (error) {
+      throw error;
+    }
+  }
+
   return (
-    <div className="root">
-      <ChampionList />
-      <SelectedChampion />
+    <div>
+      <SearchPlayer
+        handleSearch={(name) => {
+          getSummonerInfo(name);
+        }}
+      />
+      {
+        summoner && (
+          <SummonerInfo
+            summoner={summoner}
+          />
+        )
+      }
     </div>
   )
-}
+};

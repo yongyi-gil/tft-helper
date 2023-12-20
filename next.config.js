@@ -4,6 +4,14 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  async rewrites() {
+    return [
+      {
+        source: '/:path*',
+        destination: 'https://kr.api.riotgames.com/:path*',
+      },
+    ]
+  },
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;
