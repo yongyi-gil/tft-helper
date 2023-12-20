@@ -14,7 +14,7 @@
 ## Getting started
 1. 프로젝트 인스톨
 ```bash
-yarn instal
+yarn install
 ```
 
 2. env.local 파일 생성
