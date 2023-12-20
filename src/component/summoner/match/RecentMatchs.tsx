@@ -2,6 +2,7 @@
 import ChampionImage from '@/component/champion/ChampionImage';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import moment from 'moment';
 
 const MatchsDiv = styled.div`
   margin: 20px;
@@ -61,22 +62,28 @@ export default function RecentMatchs(props: any) {
   }, [matchIds]);
 
   const getMatchData = async (id: string) => {
-    const url = `/tft/match/v1/matches/${id}`;
-    const options = {
-      method: 'GET',
-      headers: {
-        "X-Riot-Token": `${process.env.NEXT_PUBLIC_TFT_API_KEY}`,
-      },
-      cache: 'force-cache'
+    try {
+      const url = `/tft/match/v1/matches/${id}`;
+      const options = {
+        method: 'GET',
+        headers: {
+          "X-Riot-Token": `${process.env.NEXT_PUBLIC_TFT_API_KEY}`,
+        },
+        cache: 'force-cache'
+      }
+
+      const res = await fetch(url, options);
+      const data = await res.json();
+      
+      const parts = data.info.participants;
+      const myMatchData = parts.filter((part) => part.puuid === summonerId)[0];
+      myMatchData.gameType = data.info.tft_game_type;
+      myMatchData.dateTime = data.info.game_datetime;
+
+      return myMatchData;
+    } catch (error) {
+      throw error;
     }
-
-    const res = await fetch(url, options);
-    const data = await res.json();
-    
-    const parts = data.info.participants;
-    const myMatchData = parts.filter((part) => part.puuid === summonerId)[0];
-
-    return myMatchData;
   }
 
   return (
@@ -85,6 +92,9 @@ export default function RecentMatchs(props: any) {
       {
         matchs &&
         matchs.map((match, idx) => {
+          const dateTime = moment(match.dateTime).format('YYYY-MM-DD HH:mm:ss');
+          const today = moment().format('YYYY-MM-DD HH:mm:ss');
+
           const palyTime = match.time_eliminated;
           const minutes = Math.floor(palyTime / 60);
           const seconds = Math.floor(palyTime % 60);
@@ -115,7 +125,11 @@ export default function RecentMatchs(props: any) {
                   })
                 }
               </div>
-              <span>{minutes}분 {seconds}초</span>
+              {/* <span className="match-datetime">{dateTime}</span> */}
+              <div>
+                <div>{moment(today).to(dateTime)}</div>
+                <div>{minutes}분 {seconds}초</div>
+              </div>
             </div>
           )
         })
