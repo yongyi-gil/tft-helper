@@ -18,6 +18,10 @@ yarn dev
 npx json-server --port 9999 -watch db.json
 ```
 
+```
+root에 있는 env.local.sample 복사 후 env.local 파일 생성
+```
+
 <img width="1418" alt="스크린샷 2023-12-18 오후 5 46 59" src="https://github.com/yongyi-gil/tft-helper/assets/46886774/e97cbcaf-d580-4330-ab14-6474c31383d9">
 <img width="361" alt="스크린샷 2023-12-18 오후 5 47 16" src="https://github.com/yongyi-gil/tft-helper/assets/46886774/d7680674-1bb1-43ac-b7ee-1c62c54fbd7c">
 
