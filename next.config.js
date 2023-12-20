@@ -11,8 +11,16 @@ const nextConfig = {
         destination: '/:path*',
       },
       {
-        source: '/:path*',
-        destination: 'https://kr.api.riotgames.com/:path*',
+        source: '/tft/summoner/:path*',
+        destination: 'https://kr.api.riotgames.com/tft/summoner/:path*',
+      },
+      {
+        source: '/tft/league/:path*',
+        destination: 'https://kr.api.riotgames.com/tft/league/:path*',
+      },
+      {
+        source: '/tft/match/:path*',
+        destination: 'https://asia.api.riotgames.com/tft/match/:path*',
       },
     ]
   },

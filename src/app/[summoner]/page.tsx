@@ -27,7 +27,7 @@ export default function Summoner() {
       const data = await res.json();
 
       getLeague(data.id);
-      // getMatches(data.puuid);
+      getMatches(data.puuid);
     } catch (error) {
       throw error;
     }
@@ -54,7 +54,7 @@ export default function Summoner() {
 
   const getMatches = async (puuid: string) => {
     try {
-      const url = `https://asia.api.riotgames.com/tft/match/v1/matches/by-puuid/${puuid}/ids?start=0&count=10`;
+      const url = `/tft/match/v1/matches/by-puuid/${puuid}/ids?start=0&count=10`;
       const options = {
         method: 'GET',
         headers: {
