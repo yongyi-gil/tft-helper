@@ -36,6 +36,10 @@ const MatchsDiv = styled.div`
       flex-wrap: wrap;
       flex: 1;
     }
+
+    .match-time {
+      margin: 0px 10px;
+    }
   }
 `;
 
@@ -126,7 +130,7 @@ export default function RecentMatchs(props: any) {
                 }
               </div>
               {/* <span className="match-datetime">{dateTime}</span> */}
-              <div>
+              <div className="match-time">
                 <div>{moment(today).to(dateTime)}</div>
                 <div>{minutes}분 {seconds}초</div>
               </div>
