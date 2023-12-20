@@ -3,9 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 
 import SummonerInfo from '@/component/summoner/SummonerInfo';
+import RecentMatchs from '@/component/summoner/match/RecentMatchs';
 
 export default function Summoner() {
   const [ summoner , setSummoner ] = useState(null);
+  const [ matchIds, setMatchIds ] = useState([]);
 
   const params = useParams();
 
@@ -20,14 +22,15 @@ export default function Summoner() {
         method: 'GET',
         headers: {
           "X-Riot-Token": `${process.env.NEXT_PUBLIC_TFT_API_KEY}`,
-        }
+        },
+        cache: 'force-cache'
       }
 
       const res = await fetch(url, options);
       const data = await res.json();
 
       getLeague(data.id);
-      getMatches(data.puuid);
+      getMatchIds(data.puuid);
     } catch (error) {
       throw error;
     }
@@ -40,42 +43,58 @@ export default function Summoner() {
         method: 'GET',
         headers: {
           "X-Riot-Token": `${process.env.NEXT_PUBLIC_TFT_API_KEY}`,
-        }
+        },
+        cache: 'force-cache'
       }
 
       const res = await fetch(url, options);
       const data = await res.json();
 
+      console.log('getLeague()', data[0]);
       setSummoner(data[0]);
     } catch (error) {
       throw error;
     }
   }
 
-  const getMatches = async (puuid: string) => {
+  const getMatchIds = async (puuid: string) => {
     try {
-      const url = `/tft/match/v1/matches/by-puuid/${puuid}/ids?start=0&count=10`;
+      const limit = 5;
+      const url = `/tft/match/v1/matches/by-puuid/${puuid}/ids?start=0&count=${limit}`;
       const options = {
         method: 'GET',
         headers: {
           "X-Riot-Token": `${process.env.NEXT_PUBLIC_TFT_API_KEY}`,
-        }
+        },
+        cache: 'force-cache'
       }
 
       const res = await fetch(url, options);
       const data = await res.json();
 
-      console.log('getMatches()', data);
+      setMatchIds(data);
     } catch (error) {
       throw error;
     }
   }
 
   return (
-    summoner ? (
-      <SummonerInfo
-        summoner={summoner}
-      />
-    ) : <div>Loading...</div>
+    <>
+      {
+        summoner ? (
+          <SummonerInfo
+            summoner={summoner}
+          />
+        ) : <div>Loading...</div>
+      }
+      {
+        summoner && matchIds.length !== 0 && (
+          <RecentMatchs
+            matchIds={matchIds}
+            summonerId={summoner.puuid}
+          />
+        )
+      }
+    </>
   )
 }
