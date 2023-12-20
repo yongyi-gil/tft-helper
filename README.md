@@ -32,7 +32,7 @@ yarn dev
 
 4. json-server 실행
 ```
-npx json-server --port 9999 -watch db.json
+npx json-server --port 9999 --watch db.json
 ```
 ---
 ## Screenshot
