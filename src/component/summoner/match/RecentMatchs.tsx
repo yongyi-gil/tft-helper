@@ -10,6 +10,7 @@ const MatchsDiv = styled.div`
   background-color: #2b2b2b;
   min-width: 360px;
   border-radius: 10px;
+  color: #fff;
 
   h2 {
     font-size: 20px;
