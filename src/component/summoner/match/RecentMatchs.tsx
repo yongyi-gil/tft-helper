@@ -51,7 +51,10 @@ export default function RecentMatchs(props: any) {
         temp.push(match);
 
         if (matchIds.length === idx + 1) {
-          setMatchs(temp);
+          const sortedTemp = temp.sort((match1, match2) => {
+            return match2 - match1;
+          })
+          setMatchs(sortedTemp);
         }
       });
     }
