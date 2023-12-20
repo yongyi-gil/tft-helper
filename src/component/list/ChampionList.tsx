@@ -103,7 +103,7 @@ const ChampionList = () => {
                 const { pathname } = window.location;
                 const [ firstSegment ] = pathname.split('/').filter(Boolean);
 
-                if (pathname === '/') {
+                if (pathname === '/builder') {
                   handleAddChampion(champ);
                 } else if (firstSegment === 'champion') {
                   router.push(`/champion/${champ.id}`);
