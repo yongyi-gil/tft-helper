@@ -19,7 +19,6 @@ export default function SummonerPage() {
 
       const res = await fetch(url, options);
       const data = await res.json();
-      console.log(data);
 
       getLeague(data.id);
     } catch (error) {
@@ -39,7 +38,6 @@ export default function SummonerPage() {
 
       const res = await fetch(url, options);
       const data = await res.json();
-      console.log(data);
 
       setSummoner(data[0]);
     } catch (error) {

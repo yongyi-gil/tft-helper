@@ -64,7 +64,10 @@ export default function SearchSummoner(props: SearchProps) {
         onChange={(e) => {
           setSearchKeyword(e.target.value);
         }}
-        onKeyDown={(e) => {
+        onKeyDown={(e: React.KeyboardEvent) => {
+          if (e.isComposing || e.keyCode === 229) {
+            return
+          };
           if (e.key === 'Enter') {
             handleSearch(searchKeyword);
           }
