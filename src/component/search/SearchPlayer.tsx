@@ -35,6 +35,7 @@ const SearchDiv = styled.div`
     text-align: center;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    outline: none;
   }
 `;
 
