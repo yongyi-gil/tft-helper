@@ -13,6 +13,9 @@ const SearchDiv = styled.div`
   select {
     padding: 10px;
     width: 80px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    outline: none;
   }
 
   input {
@@ -29,6 +32,8 @@ const SearchDiv = styled.div`
     background-color: #5cb0f9;
     color: #fff;
     text-align: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 `;
 
@@ -56,6 +61,11 @@ export default function SearchSummoner(props: SearchProps) {
         value={searchKeyword}
         onChange={(e) => {
           setSearchKeyword(e.target.value);
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            handleSearch(searchKeyword);
+          }
         }}
       />
       <button

@@ -24,6 +24,12 @@ export default function Toolbar() {
   return (
     <ToobarDiv>
       <Link
+        href="/"
+        className="link-button"
+      >
+        전적
+      </Link>
+      <Link
         href="/builder"
         className="link-button"
       >

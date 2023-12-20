@@ -5,19 +5,22 @@ import Image from 'next/image';
 const InfoDiv = styled.div`
   margin: 20px;
   padding: 20px;
-  background-color: #fff;
+  background-color: #2b2b2b;
   display: flex;
   align-items: center;
   min-width: 360px;
+  border-radius: 10px;
 
   .info {
     flex: 1;
-    color: #666;
     padding-left: 20px;
+    color: #999;
 
     h2 {
+      color: #fff;
       font-size: 20px;
       font-weight: 700;
+      margin-bottom: 10px;
     }
   }
 `;
@@ -40,7 +43,7 @@ export default function SummonerInfo(props: any) {
       <div className="info">
         <h2>{summonerName}</h2>
         <h3>{tier} {rank}  {leaguePoints}</h3>
-        <h3>{wins} / {losses} {`(${Math.round(wins / (wins + losses) * 100)}%)`}</h3>
+        <h3>{wins}승 {losses}패 {`(${Math.round(wins / (wins + losses) * 100)}%)`}</h3>
       </div>
     </InfoDiv>
   )
