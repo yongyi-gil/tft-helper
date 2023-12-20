@@ -34,9 +34,6 @@ npx json-server --port 9999 -watch db.json
 ---
 ## Screenshot
 <img width="1067" alt="스크린샷 2023-12-20 오후 1 19 42" src="https://github.com/yongyi-gil/tft-helper/assets/46886774/ce26025c-ab49-4fc2-a72f-f909d2675424">
-![스크린샷 2023-12-20 오후 1 29 46](https://github.com/yongyi-gil/tft-helper/assets/46886774/9f610a23-d6ef-4554-82d3-9fe6916e611b)
-![스크린샷 2023-12-20 오후 1 30 24](https://github.com/yongyi-gil/tft-helper/assets/46886774/81c59bdc-bafd-449e-901a-4526f12c6e58)
-
 <img width="462" alt="스크린샷 2023-12-20 오후 1 19 51" src="https://github.com/yongyi-gil/tft-helper/assets/46886774/8b8d312b-7bea-460e-a290-c14d31da8fef">
-![스크린샷 2023-12-20 오후 1 29 57](https://github.com/yongyi-gil/tft-helper/assets/46886774/0034bfcd-c879-450b-b6c1-36bc6ddc9581)
-![스크린샷 2023-12-20 오후 1 30 16](https://github.com/yongyi-gil/tft-helper/assets/46886774/694fe3b1-1ac0-4cf6-9169-23dd050233a9)
+<img width="1255" alt="스크린샷 2023-12-20 오후 1 38 53" src="https://github.com/yongyi-gil/tft-helper/assets/46886774/97db1426-8181-4aa7-8200-301abc403368">
+<img width="359" alt="스크린샷 2023-12-20 오후 1 39 06" src="https://github.com/yongyi-gil/tft-helper/assets/46886774/8e676a89-695d-4621-bc4a-9d6fcb1a7f0f">
