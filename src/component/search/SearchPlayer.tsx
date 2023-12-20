@@ -16,6 +16,7 @@ const SearchDiv = styled.div`
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     outline: none;
+    height: 40px;
   }
 
   input {
