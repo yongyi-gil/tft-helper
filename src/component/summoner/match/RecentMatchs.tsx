@@ -1,8 +1,9 @@
 "use client";
-import ChampionImage from '@/component/champion/ChampionImage';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
+
+import ChampionImage from '@/component/champion/ChampionImage';
 
 const MatchsDiv = styled.div`
   margin: 20px;
