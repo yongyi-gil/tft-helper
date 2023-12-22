@@ -9,6 +9,7 @@ const MatchsDiv = styled.div`
   padding: 20px;
   background-color: #2b2b2b;
   min-width: 360px;
+  min-height: 420px;
   border-radius: 10px;
   color: #fff;
 
@@ -44,7 +45,12 @@ const MatchsDiv = styled.div`
   }
 `;
 
-export default function RecentMatchs(props: any) {
+type RecentMatchsProps = {
+  matchIds: string[];
+  summonerId: string;
+}
+
+export default function RecentMatchs(props: RecentMatchsProps) {
   const { matchIds, summonerId } = props;
 
   const [ matchs, setMatchs ] = useState(null);
@@ -94,7 +100,6 @@ export default function RecentMatchs(props: any) {
 
   return (
     <MatchsDiv>
-      <h2>최근 게임</h2>
       {
         matchs &&
         matchs.map((match, idx) => {

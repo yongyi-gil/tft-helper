@@ -1,9 +1,42 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
+import styled from 'styled-components';
 
 import SummonerInfo from '@/component/summoner/SummonerInfo';
 import RecentMatchs from '@/component/summoner/match/RecentMatchs';
+
+const SummonerPageSkeleton = styled.div`
+  @keyframes colorChange {
+    0% {
+      background-color: #121212;
+    }
+
+    100% {
+      background-color: #2b2b2b;
+    }
+  }
+
+  .summoner-info-skeleton {
+    margin: 20px;
+    min-width: 360px;
+    border-radius: 10px;
+    height: 168px;
+    transition: background-color 0.1s ease; /* 트랜지션 효과 추가 */
+    animation: colorChange 1s infinite alternate; 
+    background-color: #121212;
+  }
+
+  .recent-match-skeleton {
+    margin: 20px;
+    min-width: 360px;
+    border-radius: 10px;
+    height: 420px;
+    transition: background-color 0.1s ease; /* 트랜지션 효과 추가 */
+    animation: colorChange 1s infinite alternate; 
+    background-color: #121212;
+  }
+`;
 
 export default function Summoner() {
   const [ summoner , setSummoner ] = useState(null);
@@ -77,6 +110,15 @@ export default function Summoner() {
     }
   }
 
+  const renderSkeleton = () => {
+    return (
+      <SummonerPageSkeleton>
+        <div className="summoner-info-skeleton" />
+        <div className="recent-match-skeleton" />
+      </SummonerPageSkeleton>
+    )
+  }
+
   return (
     <>
       {
@@ -84,7 +126,7 @@ export default function Summoner() {
           <SummonerInfo
             summoner={summoner}
           />
-        ) : <div>Loading...</div>
+        ) : renderSkeleton()
       }
       {
         summoner && matchIds.length !== 0 && (

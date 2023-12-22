@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 
+import { SummnerType } from '@/types/summoner';
+
 const InfoDiv = styled.div`
   margin: 20px;
   padding: 20px;
@@ -25,8 +27,7 @@ const InfoDiv = styled.div`
   }
 `;
 
-export default function SummonerInfo(props: any) {
-  const { summoner } = props;
+export default function SummonerInfo({ summoner }: {summoner: SummnerType}) {
   const { summonerName, tier, rank, leaguePoints, wins, losses } = summoner;
 
   return (
